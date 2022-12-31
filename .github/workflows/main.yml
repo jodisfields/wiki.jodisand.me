@@ -1,0 +1,24 @@
+name: deploy
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code to workspace
+      uses: actions/checkout@v2
+
+    - name: Build MkDocs Site
+      uses: moonpathbg/mkdocs_builder@latest
+
+    - name: Deploy to web server
+      uses: moonpathbg/scp_uploader@latest
+      with:
+          host:  wiki.jodisand.me
+          port: 22
+          username: ${{ secrets.USERNAME }}
+          password : ${{ secrets.SSH_PASSWORD }}
+          source: "./public"
+          target: "~/wiki.jodisand.me/public"
