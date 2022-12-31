@@ -1,0 +1,68 @@
+# site configuration
+site_name: Software Engineering Wiki
+site_author: Jodis Fields
+site_description: Personal Software Engineering Wiki
+repo_name: jodisfields/wiki.jodisand.me
+repo_url: https://github.com/jodisfields/wiki.jodisand.me
+# theme configuration
+theme:
+  name: material
+  font:
+    text: Roboto
+    code: Roboto Mono
+  icon:
+    logo: material/library-outline
+  features:
+    - search.suggest
+    - search.highlight
+    - search.share
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+# extra configuration
+extra:
+  social:
+    - icon: fontawesome/brands/docker
+      link: https://hub.docker.com/u/jodis
+      name: DockerHub
+    - icon: fontawesome/brands/github
+      link: https://github.com/jodisfields
+      name: GitHub
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/jodisfields
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:contact@fieldbox.me
+      name: Email
+  generator: false
+# plugin configuration
+plugins:
+  - search:
+      lang: en
+  - git-revision-date-localized:
+      type: timeago
+      locale: en
+      timezone: Australia/Sydney
+      fallback_to_build_date: true
+      enable_creation_date: false
+      enabled: true
+# markdown configuration
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - tables
+  - attr_list
+  - md_in_html
