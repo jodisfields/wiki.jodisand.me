@@ -4,6 +4,7 @@ site_author: Jodis Fields
 site_description: Personal Software Engineering Wiki
 repo_name: jodisfields/wiki.jodisand.me
 repo_url: https://github.com/jodisfields/wiki.jodisand.me
+site_dir: public
 # theme configuration
 theme:
   name: material
