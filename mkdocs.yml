@@ -49,6 +49,7 @@ extra:
 plugins:
   - search:
       lang: en
+      indexing: 'full'
 # markdown configuration
 markdown_extensions:
   - pymdownx.highlight:
