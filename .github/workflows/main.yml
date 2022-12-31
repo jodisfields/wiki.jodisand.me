@@ -19,6 +19,6 @@ jobs:
           host:  wiki.jodisand.me
           port: 22
           username: ${{ secrets.USERNAME }}
-          password : ${{ secrets.SSH_PASSWORD }}
+          key: ${{ secrets.SSH_KEY }}
           source: "./public"
           target: "~/wiki.jodisand.me/public"
