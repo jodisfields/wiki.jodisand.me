@@ -49,13 +49,6 @@ extra:
 plugins:
   - search:
       lang: en
-  - git-revision-date-localized:
-      type: timeago
-      locale: en
-      timezone: Australia/Sydney
-      fallback_to_build_date: true
-      enable_creation_date: false
-      enabled: true
 # markdown configuration
 markdown_extensions:
   - pymdownx.highlight:
