@@ -20,5 +20,5 @@ jobs:
           port: 22
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_KEY }}
-          source: "."
-          target: "~/wiki.jodisand.me/public"
+          source: "./public"
+          target: "~/wiki.jodisand.me"
