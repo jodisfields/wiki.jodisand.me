@@ -66,4 +66,7 @@ markdown_extensions:
   - pymdownx.keys
   - pymdownx.mark
   - pymdownx.tilde
-
+extra:
+  analytics:
+    provider: google
+    property: G-869ZM94WZQ
