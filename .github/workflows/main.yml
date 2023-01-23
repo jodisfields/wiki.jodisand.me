@@ -18,7 +18,7 @@ jobs:
       with:
           host:  wiki.jodisand.me
           port: 22
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSH_KEY }}
+          username: jodisfields_wiki
+          key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDHKk5b99nUGZa6jVkwnHvgj9F+NtYWXgf9O4/MkkpSA3puRvvhPk/uGzLfxhXQwgfDZiapjQlIWngn4OYK7YLGVNhD+R6jstCrrHbePDuGbhEKj6dxMJia4ompnebhxVAMJ8GuUr0bkrkcBR9wcB5UJjVqvPqvhFVtYAy9gVQHGQ3X8ma/X0mrq+rDszOMpnun3xazmKtRyesSbn/epRGkSCbpF6WKXy/chyy6ocTcpmAC7oDf6lKHffsKoBoCiWEmieAEMI5dueORcRaLr24xsp1Xh+LlseTHyJ2E5Qg4qxAbUIomdceHStQXS1c8X9P+JIEUdhCxsCq54TQCSCXj jodis.fields@outlook.com
           source: "./public"
           target: "~/wiki.jodisand.me"
