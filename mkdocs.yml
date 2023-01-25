@@ -46,11 +46,14 @@ extra:
       link: mailto:contact@fieldbox.me
       name: Email
   generator: false
+  analytics:
+    provider: google
+    property: G-869ZM94WZQ
 # plugin configuration
 plugins:
   - search:
       lang: en
-      indexing: 'full'
+      indexing: "full"
 # markdown configuration
 markdown_extensions:
   - pymdownx.highlight:
@@ -66,7 +69,3 @@ markdown_extensions:
   - pymdownx.keys
   - pymdownx.mark
   - pymdownx.tilde
-extra:
-  analytics:
-    provider: google
-    property: G-869ZM94WZQ
