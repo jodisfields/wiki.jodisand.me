@@ -206,19 +206,6 @@ print(output)
 print()
 ```
 
-!!!note Output:
-     ```bash
-     Password:
-
-     IP-    OK? Method Status    Protocol
-     FastEthernet0    unassignedYES unset      down
-     FastEthernet1    unassignedYES unset      down
-     FastEthernet2    unassignedYES unset  down
-     down
-     FastEthernet3    unassignedYES unset      down
-     FastEthernet4    10.220.88.20    YES NVRAM  up    up
-     Vlan1    unassignedYES unset      down
-     ```
 
 ### Adjusting delay_factor
 
@@ -306,35 +293,6 @@ print()
 pprint(output)
 print()
 ```
-!!!note Output:
-     ```json
-     Password:
-
-     [{'intf': 'FastEthernet0',
-     'ipaddr': 'unassigned',
-     'proto': 'down',
-     'status': 'down'},
-     {'intf': 'FastEthernet1',
-     'ipaddr': 'unassigned',
-     'proto': 'down',
-     'status': 'down'},
-     {'intf': 'FastEthernet2',
-     'ipaddr': 'unassigned',
-     'proto': 'down',
-     'status': 'down'},
-     {'intf': 'FastEthernet3',
-     'ipaddr': 'unassigned',
-     'proto': 'down',
-     'status': 'down'},
-     {'intf': 'FastEthernet4',
-     'ipaddr': '10.220.88.20',
-     'proto': 'up',
-     'status': 'up'},
-     {'intf': 'Vlan1',
-     'ipaddr': 'unassigned',
-     'proto': 'down',
-     'status': 'down'}]
-     ```
 
 ### Using TTP
 
@@ -370,13 +328,7 @@ print()
 pprint(output)
 print()
 ```
-!!!note Output:
-     ```json
-     [[[{'description': 'Router-id-loopback',
-     'interface': 'Loopback0'},
-     {'description': 'CPE_Acces_Vlan',
-     'interface': 'Vlan778'}]]]
-     ```
+
 ### Using Genie
 
 ```python
@@ -399,47 +351,6 @@ pprint(output)
 print()
 ```
 
-!!!note Output:
-     ```js
-     $ python send_command_genie.py
-     Password:
-
-     {'interface': {'FastEthernet0': {'interface_is_ok': 'YES',
-
-     'ip_address': 'unassigned',
-     'method': 'unset',
-
-     'protocol': 'down',
-     'status': 'down'},
-
-     'FastEthernet1': {'interface_is_ok': 'YES',
-     'ip_address': 'unassigned',
-     'method': 'unset',
-     'protocol': 'down',
-     'status': 'down'},
-     'FastEthernet2': {'interface_is_ok': 'YES',
-     'ip_address': 'unassigned',
-     'method': 'unset',
-     'protocol': 'down',
-     'status': 'down'},
-     'FastEthernet3': {'interface_is_ok': 'YES',
-     'ip_address': 'unassigned',
-     'method': 'unset',
-     'protocol': 'down',
-     'status': 'down'},
-     'FastEthernet4': {'interface_is_ok': 'YES',
-     'ip_address': '10.220.88.20',
-     'method': 'NVRAM',
-     'protocol': 'up',
-     'status': 'up'},
-     'Vlan1': {'interface_is_ok': 'YES',
-     'ip_address': 'unassigned',
-     'method': 'unset',
-     'protocol': 'down',
-
-     'status': 'down'}}}
-     ```
-
 ### Handling commands that prompt (timing)
 
 ```python
@@ -456,14 +367,6 @@ cisco1 = {
 command = "del flash:/test3.txt"
 net_connect = ConnectHandler(**cisco1)
 
-## CLI Interaction is as follows:
-## cisco1#delete flash:/testb.txt
-## Delete filename [testb.txt]?
-## Delete flash:/testb.txt? [confirm]y
-
-## Use 'send_command_timing' which is entirely delay based.
-## strip_prompt=False and strip_command=False make the output
-## easier to read in this context.
 output = net_connect.send_command_timing(
 command_string=command,
 strip_prompt=False,
@@ -489,16 +392,6 @@ print(output)
      print()
 ```
 
-!!!note Output:
-     ```bash
-     Password:
-
-     del flash:/test3.txt
-     Delete filename [test3.txt]?
-     Delete flash:/test3.txt? [confirm]y
-     cisco1#
-     cisco1#
-     ```
 
 ### Handling commands that prompt (expect_string)
 
@@ -543,17 +436,6 @@ print(output)
 print()
 ```
 
-!!!note Output:
-     ```
-     $ python send_command_prompting_expect.py
-     Password:
-
-     del flash:/test4.txt
-     Delete filename [test4.txt]?
-     Delete flash:/test4.txt? [confirm]y
-     cisco1#
-     ```
-
 ### Configuration changes
 
 ```python
@@ -577,21 +459,6 @@ print()
 print(output)
 print()
 ```
-
-!!!note Output:
-     ```bash
-     $ python config_change.py
-     Password:
-
-     configure terminal
-     Enter configuration commands, one per line.  End with CNTL/Z.
-     cisco1(config)#logging buffered 100000
-     cisco1(config)#end
-     cisco1#write mem
-     Building configuration...
-     [OK]
-     cisco1#
-     ```
 
 ### Configuration changes from a file
 
@@ -623,23 +490,6 @@ print()
 print(output)
 print()
 ```
-
-#### Netmiko will automatically enter and exit config mode.
-!!!note Output:
-          ```bash
-          $ python config_change_file.py
-          Password:
-
-          configure terminal
-          Enter configuration commands, one per line.  End with CNTL/Z.
-          cisco1(config)#logging buffered 100000
-          cisco1(config)#no logging console
-          cisco1(config)#end
-          cisco1#write mem
-          Building configuration...
-          [OK]
-          cisco1#
-               ```
 
 ### SSH keys
 
@@ -959,26 +809,4 @@ print(output)
 
 net_connect.disconnect()
 ```
-
-#### Output from execution of this code (slightly cleaned-up).
-
-```bash
-$ python term_server.py
-Enter password of s300:
-Enter the terminal server password:
-Enter SRX2 password:
-
-sf-dc-sw1#
-
-twb-dc-termsrv>
-twb-dc-termsrv#
-
-jodis@srx2>
-
-Hostname: srx2
-Model: srx110h2-va
-JUNOS Software Release []
-```
-
-### Term Server - DND
 
