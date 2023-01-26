@@ -1,16 +1,5 @@
 #  Network Automation
 
-##  Requirements To Run The Scripts
-The only requirements to run these scripts is the python runtime itself which can be downloaded directly from [python.org](https://www.python.org/downloads/ ) and a python module called [Netmiko](https://ktbyers.github.io/netmiko/docs/netmiko/index.html ).
-- ***Python 3.6 or newer is required***
-- Once installed simply run the following command to install Netmiko and its dependencies.
-- Once the dependencies have been installed you will be able to execute python code simply by writting ```python``` followed by the name of the script you wish to run.thon
-```
-pip install -r requirements.txt
-cd Scripts
-python .\NAME-OF-SCRIPT.py
-```
-
 ##  Getting Started
 
 The below instructions will allow you to get started on your local machine for development and testing purposes. The following steps are to be used as a quick start guide for those who are new to the project and would like to get up and running quickly. Please note that these instructions are not intended to be a comprehensive guide but rather a quick start guide to deploy an environment similar to the one I have used to develop and test the scripts. I will assume that most users will be using a windows machine for this guide. However, if you are using a linux machine let me know and i will be happy to update the guide to include the linux equivalent of the steps below.
@@ -51,7 +40,8 @@ conda activate network_automation
 pip install -r requirements.txt
 ```
 
-!!!warning What if im not using conda?
+#### What if im not using conda?
+
 ```bash
 python -m venv network_automation
 network_automation\\Scripts\\activate
