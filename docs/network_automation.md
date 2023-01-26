@@ -58,28 +58,6 @@ network_automation\\Scripts\\activate
 pip install -r requirements.txt
 ```
 
-###   Why network engineers should learn Python?
-
-- It is easy to learn and read.
-- It is perfect for scripting tasks which is perfect for network automation.
-- Network vendors, especially Cisco have adopted Python as the language of choice.
-- Lots of network automation tools are written in Python.
-- Cisco already embed a Python shell in many switches.
-- Networks are getting bigger but IT teams are not, we need to find better ways to do more with less.
-- Stand out from the crowd and improve your career prospects.
-- Python also has a great community, as one of the most popular programming languages in use today, it is very easy to find a solution to your problems.
-- Python is already installed on Linux & MacOS and is now available on a lot of Cisco Switches.
-
-###   How Python is useful in networking?
-
-Python allows you to build scripts to automate complex network configuration. It is the most widely used programming language for software-defined networking, and is a critical skill for new network engineers. Learn the fundamentals of the language, including objects and variables, strings, loops, and functions.
-
-###   Learning Python Will Be Highly Useful For Network Engineer
-
-Python language has turned out to be one of the most recognized programming languages of recent times. The network engineers can also gain from it, this talent is most sought after by employers. Well, as you have understood by now, coding is crucial for the present network engineers; however, the network engineer is not going to concentrate only on it. This is where Python enters. You needn’t learn complex languages like C++ or Java but learn Python and take your networking career to the next level.
-
-It is a simple tool for the management and server configurations and tasks. Python is that you require only less number of the code which is one of the main advantages. If you are an aspiring IT consultant, network engineer, or network consultant, then you will gain a lot after learning Python. The lowest line is that networking engineers should also have programming skills to utilize the new tools and also the latest programming wave.
-
 ---
 
 ## Handy Scripts and Snippets
