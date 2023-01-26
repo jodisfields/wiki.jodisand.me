@@ -1,34 +1,4 @@
-#  Network Automation with Python
-
-<!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=2 orderedList=true } -->
-
-<!-- code_chunk_output -->
-
-1. [What is Automation?](#what-is-automation)
-2. [Why Automate?](#why-automate)
-3. [Requirements To Run The Scripts](#requirements-to-run-the-scripts)
-4. [Getting Started](#getting-started)
-5. [Setting Up a Local Development Environment](#setting-up-a-local-development-environment)
-6. [Figuring Out What to Automate](#figuring-out-what-to-automate)
-7. [Limitations of Python](#limitations-of-python)
-8. [Why Python?](#why-python)
-9. [Handy Scripts and Snippets](#handy-scripts-and-snippets)
-10. [Netmiko Scripts for Inspiration](#netmiko-scripts-for-inspiration)
-11. [Frequently Asked Questions](#frequently-asked-questions)
-
-<!-- /code_chunk_output -->
-
-##  What is Automation?
-
-Network automation refers to the configuration, provisioning, testing and deployment of network equipment whilst employing techniques to minimize the need to introduce the potential for human error. This alone has the potential to increase the overall efficiency of the network whilst simultaneously lowering operational costs.
-
-##  Why Automate?
-
-The decision to automate should be driven by the need for a more reliable, manageable and scalable network. For the purposes of this document, I will be specifically focusing on what we are currently able to achieve with the tooling we have  already developed, tested and implemented as a means for effective configuration management and device auditing capability.
-
-* Enables the ability to deeply analyse both current and historical performance of devices deployed to production can help assist in identifying any degradation of equipment before it is able to cause a major impact on the network.
-* Enables the ability to maintain an accurate list of each devices version in order to effectively mitigate the risk of potential security incidents caused by running out of date or end-of-life software.
-* Enables the ability to make a wide-spread configuration change to a large number of network devices simultaneously and reliably in the event of a data breach is a key factor in reducing the risk of a major security incident.
+#  Network Automation
 
 ##  Requirements To Run The Scripts
 The only requirements to run these scripts is the python runtime itself which can be downloaded directly from [python.org](https://www.python.org/downloads/ ) and a python module called [Netmiko](https://ktbyers.github.io/netmiko/docs/netmiko/index.html ).
@@ -88,30 +58,6 @@ network_automation\\Scripts\\activate
 pip install -r requirements.txt
 ```
 
----
-
-##   Figuring Out What to Automate
-
-1.  Identify tasks that are performed frequently.
-2.  Estimate how much time it takes to perform one of those tasks one time. Time yourself doing the task.
-3.  If anyone else performs this task, estimate how often they do it, and how long it takes them. Add everyone’s time together.
-4.  Break down the steps to the task into the smallest chunks possible.
--   Here’s an example from my experience when configuring a device with a template:
-5.  Once a task is automated, record how long it takes to run and compare it to how long it takes to run manually and how often it’s run.
-
-
-###   Open-Source Tools
-
-When getting started, I recommend beginning to learn a few common tools, then expanding from there.
-
-
-1.  **Python** - While everyone has their programming language of choice, there’s no disputing Python’s popularity and community support. If you’ve never written any code before, I highly recommend starting with Python. It’s easy to learn, beginner friendly, and there are lots of resources out there. Once you get familiar with Python, you can expand your skill set by learning additional programming languages.
-
-2.  **Ansible** - Ansible is one of the most popular open-source automation tools out there. Begin by learning how Ansible works, and use it to start automating basic tasks in your network.
-
-3.  **Git** - The de facto version control system out there, it’s entirely open-source and relatively easy to learn. Start by familiarizing yourself with how Git works, how to save (commit) changes, how to reverse (revert) changes when mistakes are made, etc. Note that Git is not the same as GitHub or GitLab. You do NOT need a GitHub/GitLab/etc. account to use Git.
-
-
 ###   Why network engineers should learn Python?
 
 - It is easy to learn and read.
@@ -134,299 +80,11 @@ Python language has turned out to be one of the most recognized programming lang
 
 It is a simple tool for the management and server configurations and tasks. Python is that you require only less number of the code which is one of the main advantages. If you are an aspiring IT consultant, network engineer, or network consultant, then you will gain a lot after learning Python. The lowest line is that networking engineers should also have programming skills to utilize the new tools and also the latest programming wave.
 
-##   Limitations of Python
-
-There are times when Python isn’t the best language. There are some specific applications where other languages like C or Java are going to be better. Let’s see why.
-
-###   Speed isn’t Python’s strong suit
-
-Python is an interpreted language, meaning everything you do goes through an extra layer so the target machine can read and execute the code. It’s similar to talking through a translator with someone who speaks a different language.
-Comparing Python with C, a compiled programming language, it’s true that Python code runs slower if we measure the execution time. Yet Python’s flexibility serves as a counterweight here. The language offers practical ways to solve problems and features dynamic typing, which contributes to rapid development. So Python beats C in terms of development time, which is often far more crucial than runtime performance, since less development time converts into lower costs and faster time to market.
-Conclusion: If you have algorithms that need to run quickly (say, for sorting, searching, or just doing something on an integrated piece of hardware that needs to meet a specific speed requirement), you probably shouldn’t use Python.
-
-###   High memory usage
-
-Because of Python’s structure, it demands a lot of memory.
-
----
-
-##   Why Python?
-
-Well-structured, straightforward, easy to learn and use, concise yet expressive, versatile, and neat. That’s what Python is. Python focuses on code readability and visibility, which means developers can easily read, understand, and modify existing code and spend less time and effort actually coding. These advantages make Python one of the best languages for startups, since getting to market fast often means a competitive advantage and a faster return on investment.
-
-###   It's Powerful
-
-Python can be used to build almost anything, from websites to AI-powered solutions to numeric and scientific apps. The language provides a lot of standard libraries and features that address almost any programming need, which again results in rapid development.
-
-###   Security is a priority
-
-Cybersecurity threats are rapidly growing, which is why businesses look for ways to ensure maximum security.
-
-Python proves to be a great choice for those focusing on data security. It provides features for authentication and authorization, email verification, and resetting passwords. Also, Python and its frameworks offer different mechanisms to address and reduce security-related issues such as cross-site request forgery (CSRF), cross-site scripting (XSS), SQL injection, and clickjacking.
-
-###   Large community and high developer availability
-
-Having a strong community is crucial for any language, since community members share experiences and help one another, create and upgrade features, update documentation, and troubleshoot problems. A large community, in short, grows the language and makes it develop faster.
-
-Additionally, a large community means developers are easy to find. For example, there were 2,843 Python/Django outsourcing development companies listed on Clutch as of October 2020. As for Python developers, there were 8.2 million active Pythonistas in the world according to the Global Developer Population 2019 report by SlashData.
-
-###   Good with AI and ML tasks
-
-How does Amazon choose items just for you? And how does Spotify know what you want to listen to before you actually turn on the music? The answer is machine learning. And Python is the king of machine learning and artificial intelligence. Among its top machine learning use cases are content personalization, recommendations, image recognition, machine translation, speech recognition, fraud detection, and user behavior analytics.
-
 ---
 
 ## Handy Scripts and Snippets
 
-### SSL Checker
-
-Collects SSL/TLS information from all hosts defined in devices.txt
-
-### Usage
-
-```
-python ssl_checker.py -h
-```
-
-`-f, --host-file` File containing hostnames for input
-
-`-H, --host ` Enter the hosts separated by space
-
-`-s, --socks ` Enable connection through SOCKS server
-
-`-c, --csv ` Enable CSV file export by specifying filename.csv after this
-
-#### Argument:
-
-`-j, --json ` Use this if you want to only have the result in JSON
-
-`-S, --summary ` This argument will show quick summary in the output
-
-`-x, --html ` Enable HTML file export
-
-`-J, --json-save` Use this if you want to save as JSON file per host
-
-`-a, --analyze` This argument will include security analyze on the certificate. Takes more time. No result means failed to analyze.
-
-`-v, --verbose` Shows more output. Good for troubleshooting.
-
-`-h, --help`Shows the help and exit
-
-#### Example
-
-```bash
-jodis@jodis-laptop:$ python check-ssl.py -H time.com github.com:443
-+---------------------+
-| Analyzing 2 host(s) |
-+---------------------+
-[+] time.com
--------------
-Issued domain: time.com
-Issued to: None
-Issued by: Amazon (US)
-Valid from: 2019-09-06
-Valid to: 2020-10-06 (78 days left)
-Validity days: 396
-Certificate valid: True
-Certificate S/N: 20641318859548253362475798736742284477
-Certificate SHA1 FP: D5:CE:1B:77:AB:59:C9:BE:37:58:0F:5D:73:97:64:98:C4:3E:43:30
-Certificate version: 2
-Certificate algorithm: sha256WithRSAEncryption
-Expired: False
-Certificate SAN's:
-    DNS:time.com
-    DNS:*.time.com
-[+] github.com
----------------
-Issued domain: github.com
-Issued to: GitHub, Inc.
-Issued by: DigiCert Inc (US)
-Valid from: 2020-05-05
-Valid to: 2022-05-10 (659 days left)
-Validity days: 735
-Certificate valid: True
-Certificate S/N: 7101927171473588541993819712332065657
-Certificate SHA1 FP: 5F:3F:7A:C2:56:9F:50:A4:66:76:47:C6:A1:8C:A0:07:AA:ED:BB:8E
-Certificate version: 2
-Certificate algorithm: sha256WithRSAEncryption
-Expired: False
-Certificate SAN's:
-    DNS:github.com
-    DNS:www.github.com
-+-------------------------------------------------------------------------------------------+
-| Successful: 2 | Failed: 0 | Valid: 2 | Warning: 0 | Expired: 0 | Duration: 0:00:07.694433 |
-+-------------------------------------------------------------------------------------------+
-```
-
-!!!NOTE: Keep in mind that if the certificate has less than 15 days validity, the script will consider it as a warning in the summary.
-
-### Censored?
-
-Try passing the `-s/--socks` argument to the script with the `HOST:PORT` format to connect through SOCKS proxy.
-
-```shell
-jodis@jodis-laptop: python check-ssl.py -H facebook.com
-+-------------------+
-|Analyzing 1 host(s)|
-+-------------------+
-
-[-] facebook.com    Failed: [Errno 111] Connection refused
-
-+-------------------------------------------------------------------------------------------+
-| Successful: 0 | Failed: 1 | Valid: 0 | Warning: 0 | Expired: 0 | Duration: 0:00:04.109058 |
-+-------------------------------------------------------------------------------------------+
-
-jodis@jodis-laptop: python check-ssl.py -H facebook.com -s localhost:9050
-+---------------------+
-| Analyzing 1 host(s) |
-+---------------------+
-[+] facebook.com
------------------
-Issued domain: *.facebook.com
-Issued to: Facebook, Inc.
-Issued by: DigiCert Inc (US)
-Valid from: 2020-05-14
-Valid to: 2020-08-05 (16 days left)
-Validity days: 83
-Certificate valid: True
-Certificate S/N: 19351530099991824979726880175805235719
-Certificate SHA1 FP: 89:7F:54:63:61:34:2F:7E:B4:B5:68:E2:92:79:D2:98:B4:97:D8:EA
-Certificate version: 2
-Certificate algorithm: sha256WithRSAEncryption
-Expired: False
-Certificate SAN's:
-    DNS:*.facebook.com
-    DNS:*.facebook.net
-    DNS:*.fbcdn.net
-    DNS:*.fbsbx.com
-    DNS:*.messenger.com
-    DNS:facebook.com
-    DNS:messenger.com
-    DNS:*.m.facebook.com
-    DNS:*.xx.fbcdn.net
-    DNS:*.xy.fbcdn.net
-    DNS:*.xz.fbcdn.net
-+-------------------------------------------------------------------------------------------+
-| Successful: 1 | Failed: 0 | Valid: 1 | Warning: 0 | Expired: 0 | Duration: 0:00:00.416188 |
-+-------------------------------------------------------------------------------------------+
-```
-
-### Quick Summary
-
-Sometimes you need to run the script and get the quick summary of the hosts. By passing `-S/--summary` you will get the quick overview of the result.
-
-```bash
-jodis@jodis-laptop: python check-ssl.py -H narbeh.org:443 test.com twitter.com -S
-+-------------------------------------------------------------------------------------------+
-| Successful: 3 | Failed: 0 | Valid: 3 | Warning: 0 | Expired: 0 | Duration: 0:00:01.958670 |
-+-------------------------------------------------------------------------------------------+
-```
-
-### Security Analyze
-
-By passing `-a/--analyze` to the script, it will scan the certificate for security issues and vulnerabilities. It will also mark a grade for the certificate. **This will take more time to finish.**
-
-```bash
-jodis@jodis-laptop: python check-ssl.py -H narbeh.org:443 -a
-+---------------------+
-| Analyzing 1 host(s) |
-+---------------------+
-
-Warning: -a/--analyze is enabled. It takes more time...
-
-[+] narbeh.org
-
-Issued domain: narbeh.org
-Issued to: None
-Issued by: Let's Encrypt (US)
-Valid from: 2018-04-21
-Valid to: 2018-07-20 (88 days left)
-Validity days: 90
-Certificate S/N: 338163108483756707389368573553026254634358
-Certificate version: 2
-Certificate algorithm: sha256WithRSAEncryption
-Certificate grade: A
-Poodle vulnerability: False
-Heartbleed vulnerability: False
-Hearbeat vulnerability: True
-Freak vulnerability: False
-Logjam vulnerability: False
-Drown vulnerability: False
-Expired: False
-
-+------------------------------------------------------+
-| Successful: 1 | Failed: 0 | Duration: 0:00:01.429145 |
-+------------------------------------------------------+
-```
-
-### JSON, HTML and CSV Output
-
-Example only with the `-j/--json` argument which shows the JSON only. Perfect for piping to another tool.
-
-```json
-{
-"narbeh.org": {
-"host": "narbeh.org",
-"issued_to": "sni.cloudflaressl.com",
-"issued_o": "Cloudflare, Inc.",
-"issuer_c": "US",
-"issuer_o": "CloudFlare, Inc.",
-"issuer_ou": null,
-"issuer_cn": "CloudFlare Inc ECC CA-2",
-"cert_sn": "20958932659753030511717961095784314907",
-"cert_sha1": "FC:2D:0E:FD:DE:C0:98:7D:23:D2:E7:14:4C:07:6A:3D:25:25:49:B6",
-"cert_alg": "ecdsa-with-SHA256",
-"cert_ver": 2,
-"cert_sans": "DNS:sni.cloudflaressl.com; DNS:narbeh.org; DNS:*.narbeh.org",
-"cert_exp": false,
-"cert_valid": true,
-"valid_from": "2020-04-02",
-"valid_till": "2020-10-09",
-"validity_days": 190,
-"days_left": 81,
-"valid_days_to_expire": 81,
-"tcp_port": 443
-}
-}
-```
-
-CSV export is also easy. After running the script with `-c/--csv` argument and specifying `filename.csv` after it, you'll have something like this:
-
-```bash
-jodis@jodis-laptop: ~/ssl-checker$ cat domain.csv
-narbeh.org
-issued_to,narbeh.org
-valid_till,2018-07-20
-valid_from,2018-04-21
-issuer_ou,None
-cert_ver,2
-cert_alg,sha256WithRSAEncryption
-cert_exp,False
-issuer_c,US
-issuer_cn,Let's Encrypt Authority X3
-issuer_o,Let's Encrypt
-validity_days,90
-cert_sn,338163108483756707389368573553026254634358
-```
-
-Finally, if you want to export JSON's output per host in a separated file, use `-J/--json-save`. This will export JSON's output per host.
-
-#### As a Python Module
-
-```python
-from ssl_checker import SSLChecker
-
-SSLChecker = SSLChecker()
-args = {
-'hosts': ['google.com', 'cisco.com']
-}
-
-SSLChecker.show_result(SSLChecker.get_args(json_args=args))
-```
-
----
-
-## Netmiko Scripts for Inspiration
+### Using Netmiko
 
 ```python
 from netmiko import ConnectHandler
@@ -434,8 +92,8 @@ from getpass import getpass
 
 net_connect = ConnectHandler(
 device_type="cisco_ios",
-host="cisco1.lasthop.io",
-username="pyclass",
+host="10.0.0.10",
+username="jodis",
 password=getpass(),
 )
 
@@ -451,8 +109,8 @@ from getpass import getpass
 
 cisco1 = {
 "device_type": "cisco_ios",
-"host": "cisco1.lasthop.io",
-"username": "pyclass",
+"host": "10.0.0.10",
+"username": "jodis",
 "password": getpass(),
 }
 
@@ -469,8 +127,8 @@ from getpass import getpass
 
 cisco1 = {
 "device_type": "cisco_ios",
-"host": "cisco1.lasthop.io",
-"username": "pyclass",
+"host": "10.0.0.10",
+"username": "jodis",
 "password": getpass(),
 }
 
@@ -490,8 +148,8 @@ secret = getpass("Enter secret: ")
 
 cisco1 = {
 "device_type": "cisco_ios",
-"host": "cisco1.lasthop.io",
-"username": "pyclass",
+"host": "10.0.0.10",
+"username": "jodis",
 "password": password,
 "secret": secret,
 }
@@ -513,29 +171,29 @@ password = getpass()
 
 cisco1 = {
 "device_type": "cisco_ios",
-"host": "cisco1.lasthop.io",
-"username": "pyclass",
+"host": "10.0.0.10",
+"username": "jodis",
 "password": password,
 }
 
 cisco2 = {
 "device_type": "cisco_ios",
-"host": "cisco2.lasthop.io",
-"username": "pyclass",
+"host": "10.0.0.11",
+"username": "jodis",
 "password": password,
 }
 
 nxos1 = {
 "device_type": "cisco_nxos",
-"host": "nxos1.lasthop.io",
-"username": "pyclass",
+"host": "10.0.0.12",
+"username": "jodis",
 "password": password,
 }
 
 srx1 = {
 "device_type": "juniper_junos",
-"host": "srx1.lasthop.io",
-"username": "pyclass",
+"host": "10.0.0.13",
+"username": "jodis",
 "password": password,
 }
 
@@ -553,8 +211,8 @@ from getpass import getpass
 
 cisco1 = {
 "device_type": "cisco_ios",
-"host": "cisco1.lasthop.io",
-"username": "pyclass",
+"host": "10.0.0.10",
+"username": "jodis",
 "password": getpass(),
 }
 
@@ -593,8 +251,8 @@ from datetime import datetime
 
 cisco1 = {
 "device_type": "cisco_ios",
-"host": "cisco1.lasthop.io",
-"username": "pyclass",
+"host": "10.0.0.10",
+"username": "jodis",
 "password": getpass(),
 }
 
@@ -607,25 +265,15 @@ net_connect = ConnectHandler(**cisco1)
 
 ## Netmiko normally allows 100 seconds for send_command to complete
 ## delay_factor=4 would allow 400 seconds.
-output = net_connect.send_command_timing(
-command, strip_prompt=False, strip_command=False, delay_factor=4
-)
-## Router prompted in this example:
-## -------
-## cisco1#copy flash:c880data-universalk9-mz.155-3.M8.bin flash:test1.bin
-## Destination filename [test1.bin]?
-## Copy in progress...CCCCCCC
-## -------
+output = net_connect.send_command_timing(command, strip_prompt=False, strip_command=False, delay_factor=4)
+
 if "Destination filename" in output:
 print("Starting copy...")
-output += net_connect.send_command("
-", delay_factor=4, expect_string=r"#")
+output = net_connect.send_command("", delay_factor=4, expect_string=r"#")
 net_connect.disconnect()
 
 end_time = datetime.now()
-print(f"
-{output}\
-")
+print(f"{output}")
 print("done")
 print(f"Execution time: {start_time - end_time}")
 ```
@@ -640,8 +288,8 @@ from getpass import getpass
 
 cisco1 = {
 "device_type": "cisco_ios",
-"host": "cisco1.lasthop.io",
-"username": "pyclass",
+"host": "10.0.0.10",
+"username": "jodis",
 "password": getpass(),
 ## Multiple all of the delays by a factor of two
 "global_delay_factor": 2,
@@ -652,9 +300,7 @@ net_connect = ConnectHandler(**cisco1)
 output = net_connect.send_command(command)
 net_connect.disconnect()
 
-print(f"
-{output}\
-")
+print(f"{output}")
 ```
 
 ### Using TextFSM
@@ -668,8 +314,8 @@ from pprint import pprint
 
 cisco1 = {
 "device_type": "cisco_ios",
-"host": "cisco1.lasthop.io",
-"username": "pyclass",
+"host": "10.0.0.10",
+"username": "jodis",
 "password": getpass(),
 }
 
@@ -721,8 +367,8 @@ from pprint import pprint
 
 cisco1 = {
 "device_type": "cisco_ios",
-"host": "cisco1.lasthop.io",
-"username": "pyclass",
+"host": "10.0.0.10",
+"username": "jodis",
 "password": getpass(),
 }
 
@@ -762,8 +408,8 @@ from netmiko import ConnectHandler
 
 device = {
 "device_type": "cisco_ios",
-"host": "cisco1.lasthop.io",
-"username": "pyclass",
+"host": "10.0.0.10",
+"username": "jodis",
 "password": getpass()
 }
 
@@ -824,8 +470,8 @@ from getpass import getpass
 
 cisco1 = {
 "device_type": "cisco_ios",
-"host": "cisco1.lasthop.io",
-"username": "pyclass",
+"host": "10.0.0.10",
+"username": "jodis",
 "password": getpass(),
 }
 
@@ -884,25 +530,15 @@ from getpass import getpass
 
 cisco1 = {
 "device_type": "cisco_ios",
-"host": "cisco1.lasthop.io",
-"username": "pyclass",
+"host": "10.0.0.10",
+"username": "jodis",
 "password": getpass(),
 }
 
 command = "del flash:/test4.txt"
 net_connect = ConnectHandler(**cisco1)
 
-## CLI Interaction is as follows:
-## cisco1#delete flash:/testb.txt
-## Delete filename [testb.txt]?
-## Delete flash:/testb.txt? [confirm]y
 
-## Use 'send_command' and the 'expect_string' argument (note, expect_string uses
-## RegEx patterns). Netmiko will move-on to the next command when the
-## 'expect_string' is detected.
-
-## strip_prompt=False and strip_command=False make the output
-## easier to read in this context.
 output = net_connect.send_command(
 command_string=command,
 expect_string=r"Delete filename",
@@ -949,8 +585,8 @@ from getpass import getpass
 
 device = {
 "device_type": "cisco_ios",
-"host": "cisco1.lasthop.io",
-"username": "pyclass",
+"host": "10.0.0.10",
+"username": "jodis",
 "password": getpass(),
 }
 
@@ -988,8 +624,8 @@ from getpass import getpass
 
 device1 = {
 "device_type": "cisco_ios",
-"host": "cisco1.lasthop.io",
-"username": "pyclass",
+"host": "10.0.0.10",
+"username": "jodis",
 "password": getpass(),
 }
 
@@ -1035,7 +671,7 @@ from netmiko import ConnectHandler
 key_file = "~/.ssh/test_rsa"
 cisco1 = {
 "device_type": "cisco_ios",
-"host": "cisco1.lasthop.io",
+"host": "10.0.0.10",
 "username": "testuser",
 "use_keys": True,
 "key_file": key_file,
@@ -1055,8 +691,8 @@ from netmiko import ConnectHandler
 from getpass import getpass
 cisco1 = {
 "device_type": "cisco_ios",
-"host": "cisco1.lasthop.io",
-"username": "pyclass",
+"host": "10.0.0.10",
+"username": "jodis",
 "password": getpass(),
 "ssh_config_file": "~/.ssh/ssh_config",
 }
@@ -1077,7 +713,7 @@ User gituser
 HostName pynetqa.lasthop.io
 
 host * !jumphost
-User pyclass
+User jodis
 ## Force usage of this SSH config file
 ProxyCommand ssh -F ~/.ssh/ssh_config -W %h:%p jumphost
 ## Alternate solution using netcat
@@ -1094,8 +730,8 @@ from getpass import getpass
 
 cisco1 = {
 "device_type": "cisco_ios",
-"host": "cisco1.lasthop.io",
-"username": "pyclass",
+"host": "10.0.0.10",
+"username": "jodis",
 "password": getpass(),
 ## File name to save the 'session_log' to
 "session_log": "output.txt"
@@ -1147,8 +783,8 @@ logger = logging.getLogger("netmiko")
 
 cisco1 = {
 "device_type": "cisco_ios",
-"host": "cisco1.lasthop.io",
-"username": "pyclass",
+"host": "10.0.0.10",
+"username": "jodis",
 "password": getpass(),
 }
 
@@ -1165,8 +801,8 @@ from netmiko import ConnectHandler, file_transfer
 
 cisco = {
 "device_type": "cisco_ios",
-"host": "cisco1.lasthop.io",
-"username": "pyclass",
+"host": "10.0.0.10",
+"username": "jodis",
 "password": getpass(),
 }
 
@@ -1198,8 +834,8 @@ from getpass import getpass
 
 device = {
 "device_type": "autodetect",
-"host": "cisco1.lasthop.io",
-"username": "pyclass",
+"host": "10.0.0.10",
+"username": "jodis",
 "password": getpass(),
 }
 
@@ -1224,10 +860,10 @@ from getpass import getpass
 from netmiko.snmp_autodetect import SNMPDetect
 from netmiko import ConnectHandler
 
-host = "cisco1.lasthop.io"
+host = "10.0.0.10"
 device = {
 "host": host,
-"username": "pyclass",
+"username": "jodis",
 "password": getpass()
 }
 
@@ -1257,11 +893,11 @@ from getpass import getpass
 from netmiko.snmp_autodetect import SNMPDetect
 from netmiko import ConnectHandler
 
-device = {"host": "cisco1.lasthop.io", "username": "pyclass", "password": getpass()}
+device = {"host": "10.0.0.10", "username": "jodis", "password": getpass()}
 
 snmp_key = getpass("Enter SNMP community: ")
 my_snmp = SNMPDetect(
-"cisco1.lasthop.io",
+"10.0.0.10",
 snmp_version="v3",
 user="pysnmp",
 auth_key=snmp_key,
@@ -1285,22 +921,6 @@ net_connect.disconnect()
 ### Terminal server and redispatch
 
 ```python
-"""
-This is a complicated example.
-
-It illustrates both using a terminal server and bouncing through multiple
-devices.
-
-It also illustrates using 'redispatch()' to change the Netmiko class.
-
-The setup is:
-
-Linux Server
---> Small Switch (SSH)
---> Terminal Server (telnet)
-
---> Juniper SRX (serial)
-"""
 import os
 from getpass import getpass
 from netmiko import ConnectHandler, redispatch
@@ -1348,7 +968,7 @@ print(net_connect.find_prompt())
 net_connect.write_channel("srx2\
 ")
 ## Update the credentials for SRX2 as these are different.
-net_connect.username = "pyclass"
+net_connect.username = "jodis"
 net_connect.password = srx2_pass
 ## Use the telnet_login() method to connect to the SRX
 net_connect.telnet_login()
@@ -1375,147 +995,12 @@ sf-dc-sw1#
 twb-dc-termsrv>
 twb-dc-termsrv#
 
-pyclass@srx2>
+jodis@srx2>
 
 Hostname: srx2
 Model: srx110h2-va
 JUNOS Software Release []
 ```
 
----
+### Term Server - DND
 
-###   Traditional Network Management
-
-With traditional networking, you can only manage network devices one at a time using SSH to the command line. This process is time-consuming, labor-intensive, and prone to human error. While this can work well in smaller networks, it does not work well in a large enterprise and does not also scale very well.
-Traditional Network Monitoring Systems (NMS) such as SolarWinds, CiscoWorks, and Cisco Prime Infrastructure have also been available for a long time and use protocols such as SNMP and Netflow to gather information reports on the state of the network. While SNMP uses MIB and OID to collects useful data and can also be used to push configuration to devices, it does not build for real-time programmatic access and has limited functionality.
-SNMP also has security concerns and can be complex to implement and operate. These are the main challenges of traditional Networks:
-
-- Scalability Issues
-- Management Complexity
-- Slower Issue Resolution
-
-###   Automate the network provisioning
-
-- Perform network planning, designing, and implementation
-- Supply virtual and physical networking devices or nodes
-- Implement security compliance and improve the overall network security
-- Simplify network management
-- Automate reporting, monitoring, and management of enterprise network
-- Analyze real-time network data to deliver insights
-- To better understand what network automation is, let’s look at how it works.
-
-###   How Does Network Automation Work?
-
-Generally, you automate networks with programmable logic on the devices’ command line interface (CLI). This way, the nodes can dynamically perform automated actions. These include network filtering, port controlling, bandwidth control, etc.
-However, this method isn’t scalable. It also limits the scope of automation as it needs to be done on a per device basis. As a result, most modern networking infrastructures offer a centralized control panel. This panel will connect all the networking devices within the network.
-Network administrators or programmers can create programmable logic and scripts. This way, they can control and automate your network. To do this, they can use the devices’ CLI or graphical UI. Alternatively, admins can rely on external systems or automation tools. After that, programmers can execute these scripts using the CLI or API.
-Automation tools and services can help you automate several everyday networking tasks. For instance, they can help you analyze and predict bandwidth usage. Automation will also help you with network inventory management and dynamic provisioning. You’ll also be able to backup and change configurations across your business. Finally, network automation tools can help you remotely control access points and ports.
-###   Benefits of Network Automation
-
-Generally, growing companies can’t manage and scale their infrastructure easily. But network automation helps you overcome this challenge. In turn, you’ll also improve your overall efficiency. Let’s take a more detailed look at the benefits of network automation:
-
-- Eliminates manual tasks. This results in an increase in accuracy and efficiency. Standardizes processes. This reduces the risks of network outages and scalability issues. Monitors your network constantly and generates reports. This can help you better control your network infrastructure.
-- Makes changes faster and builds a reliable network.
-- Gives you network visibility and ease of control through a centralized dashboard.
-- Tracks, analyzes, and resolves issues.
-- Reduces human errors. This increases network resilience.
-- Reduces the workload on IT staff. This can help organizations save capital costs.
-
-###   Best Practices for Network Automation
-
-Network automation tools and services use software abstraction. They connect networking devices and nodes. This way, they give you an easy-to-control network management workflow. Here are some best practices you can adopt to get the most out of network automation:
-
-###   Decide What to Automate
-Often, companies aren’t attentive when selecting a network automation vendor. This is a huge mistake. Before you start choosing a vendor, know what you need to automate in your network. This will help you narrow down your search list for the vendor. It’ll also help you save costs.
-
-###   Aim for Low-Code Network Automation
-The industry faces several challenges with the network automation skill gap. In fact, programming experience is lacking. Network scripting also has a steep learning curve. Did you know that only 3% of networking teams know how to perform automation tasks? So, choosing a service that allows low-code network automation could prove to be very beneficial. This will eliminate the dependency associated with certain employees. Low-code network automation will also limit human errors.
-
-###   Adopt a Vendor-Agnostic Approach
-Often, network architectures include solutions from many vendors. This means you should design a vendor-agnostic network orchestration. This mitigates the overhead associated with fixing errors or making changes to your network. Alternatively, you can find and deploy automation tools that support different vendors. This way, you can implement a true single view multi-vendor support.
-
-###   Integrate with Other Tools and Services
-It’s important to choose a service that integrates directly with external systems. For instance, integration with ELK and ServiceNow helps with log management and incident reporting. If your service has broad API integration support, you can streamline your business operations. You’ll be more flexible and you’ll use external tools to fit your needs.
-
-###   Automate Configuration
-If you automate configuration, you’ll ensure consistency across all your applications. You’ll also mitigate human errors. This enables your network admins to convert the configuration into software code. In turn, you can build a single source of truth for all configurations across your organization.
-
----
-
-## Frequently Asked Questions
-
-###   What is an SDN?
-A software-defined network (SDN) is a networking technology. It uses software systems to design, deploy, manage, and configure enterprise networks. SDN allows organizations to intelligently and centrally control their entire network. That includes network peripherals and bandwidth usage.
-
-###   What is a CLI?
-Command Line Interface (CLI) is a text-based user interface. You can use it to develop, run, manage, and control software systems, tools, and applications. You also can use CLI to automate your network. To do this, you deploy scripts and automation tasks.
-
-###   What is an API?
-An application programming interface (API) establishes communication between different systems. An API is an intermediary that allows software systems to request and access information. You can access several network automation tools and services using APIs.
-
-###   What is network orchestration?
-Network orchestration is a process where a network controller helps achieve business objectives. The controller may design the network. It’ll also set up network peripherals and devices, applications, and services. You can leverage network orchestration to automate enterprise networks.
-
-### What industries can benefit the most from network automation?
-Network automation is domain and industry-agnostic. This means it’s applicable in all industries that require networking. These include Information Technology, manufacturing, service-based industries, banking, and cloud services.
-
-###   What are the top companies using Python?
-There are quite a lot of world-famous companies that prefer Python to other languages. They include Google, Netflix, Spotify, Uber, Dropbox, Instacart, Instagram, Stripe, Disqus, and Mozilla.
-
-###   Where is Python used?
-According to the Python Developer Survey 2019 by JetBrains, Python is mainly used for data analysis, website development, machine learning, DevOps, automation scripts, system administration, web parsers, crawlers, and scrapers, testing, educational purposes, software prototyping, and network programming.
-
-###   How stable is Python?
-Very stable. Famous apps written in Python like Pinterest, Disqus, and Instagram prove that. These apps use Python to handle high loads and ensure fast and efficient app performance.
-
-###  What Is Network Automation?
-Network automation is the process of using software to manage network resources and services. You can achieve network automation through a software-defined network (SDN). An SDN introduces network virtualization capabilities. This makes it easy to automate and control the networks.
-Network automation also can help you configure, test, deploy, and operate components in your network. Since enterprise networks are becoming more complex, network automation tools are gaining traction. Here are some of the things these tools can do:
-
-### Scripts vs Modules
-In computing, the word script is used to refer to a file containing a logical sequence of orders or a batch processing file. This is usually a simple program, stored in a plain text file. Scripts are always processed by some kind of interpreter, which is responsible for executing each command sequentially. A plain text file containing Python code that is intended to be directly executed by the user is usually called script, which is an informal term that means top-level program file. On the other hand, a plain text file, which contains Python code that is designed to be imported and used from another Python file, is called module. So, the main difference between a module and a script is that modules are meant to be imported, while scripts are made to be directly executed.
-In either case, the important thing is to know how to run the Python code you write into your modules and scripts.
-
-### What’s the Python Interpreter?
-Python is an excellent programming language that allows you to be productive in a wide variety of fields.
-Python is also a piece of software called an interpreter. The interpreter is the program you’ll need to run Python code and scripts. Technically, the interpreter is a layer of software that works between your program and your computer hardware to get your code running.
-Depending on the Python implementation you use, the interpreter can be:
-
-- A program written in C, like CPython, which is the core implementation of the language
-- A program written in Java, like Jython
-- A program written in Python itself, like PyPy
-- A program implemented in .NET, like IronPython
-
-Whatever form the interpreter takes, the code you write will always be run by this program. Therefore, the first condition to be able to run Python scripts is to have the interpreter correctly installed on your system.
-
-The interpreter is able to run Python code in two different ways:
-
-- As a script or module
-- As a piece of code typed into an interactive session
-
-### How Does the Interpreter Work?
-When you try to run Python scripts, a multi-step process begins. In this process the interpreter will:
-
-- Process the statements of your script in a sequential fashion
-- Compile the source code to an intermediate format known as bytecode
-- This bytecode is a translation of the code into a lower-level language that’s platform-independent. Its purpose is to optimize code execution. So, the next time the interpreter runs your code, it’ll bypass this compilation step.
-- Strictly speaking, this code optimization is only for modules (imported files), not for executable scripts.
-- Ship off the code for execution
-
-At this point, something known as a Python Virtual Machine (PVM) comes into action. The PVM is the runtime engine of Python. It is a cycle that iterates over the instructions of your bytecode to run them one by one.
-
-The PVM is not an isolated component of Python. It’s just part of the Python system you’ve installed on your machine. Technically, the PVM is the last step of what is called the Python interpreter. The whole process to run Python scripts is known as the Python Execution Model.
-
-### How to Run Python Scripts From a File Manager
-
-Running a script by double-clicking on its icon in a file manager is another possible way to run your Python scripts. This option may not be widely used in the development stage, but it may be used when you release your code for production.
-
-In order to be able to run your scripts with a double-click, you must satisfy some conditions that will depend on your operating system. Windows, for example, associates the extensions .py and .pyw with the programs python.exe and pythonw.exe respectively. This allows you to run your scripts by double-clicking on them.
-
-When you have a script with a command-line interface, it is likely that you only see the flash of a black window on your screen. To avoid this annoying situation, you can add a statement like input`('Press Enter to Continue...')` at the end of the script. This way, the program will stop until you press Enter.
-
-This trick has its drawbacks, though. For example, if your script has any error, the execution will be aborted before reaching the input() statement, and you still won’t be able to see the result.
-
-On Unix-like systems, you’ll probably be able to run your scripts by double-clicking on them in your file manager. To achieve this, your script must have execution permissions, and you’ll need to use the shebang trick you’ve already seen. Likewise, you may not see any results on screen when it comes to command-line interface scripts.
-
-Because the execution of scripts through double-click has several limitations and depends on many factors (such as the operating system, the file manager, execution permissions, file associations), it is recommended that you see it as a viable option for scripts already debugged and ready to go into production.
