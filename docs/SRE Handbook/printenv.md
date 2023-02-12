@@ -1,3 +1,0 @@
-# printenv
-
-![](assets/printenv.png)
