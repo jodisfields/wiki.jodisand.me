@@ -4,8 +4,6 @@
 <img src="https://user-images.githubusercontent.com/100603074/210680426-20a92131-56f9-43ad-be82-f449e3215dda.png" height="300">
 </p>
 
-This github repository contains a collection of **120+** **tools** and **resources** that can be useful for **red teaming activities**.
-
 Some of the tools may be specifically designed for red teaming, while others are more general-purpose and can be adapted for use in a red teaming context.
 
 > 🔗 If you are a Blue Teamer, check out [BlueTeam-Tools](https://github.com/A-poc/BlueTeam-Tools)
