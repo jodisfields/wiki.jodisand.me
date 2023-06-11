@@ -130,3 +130,6 @@ dmypy.json
 
 # vscode
 .vscode
+index.html
+index2.html
+style.css
