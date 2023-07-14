@@ -49,13 +49,11 @@
     <br>
     <div align="center">
       <img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=jodisfields&amp;"
-        alt="jodisfields" height width="32%">
+        alt="jodisfields" height width="45%">
+     
       <img align="center"
-        src="https://github-readme-stats.vercel.app/api?username=jodisfields&amp;show_icons=true&amp;locale=en"
-        alt="jodisfields" height width="32%">
-      <img align="center"
-        src="https://spotify-github-profile.vercel.app/api/view?uid=jodis.fields1&amp;cover_image=true&amp;theme=novatorem"
-        alt="jodisfields" height width="34%">
+        src="https://spotify-github-profile.vercel.app/api/view?uid=jodis.fields1&cover_image=true"
+        alt="jodisfields" height width="45%">
     </div>
     <h4 align="left">Languages and Tools:</h4>
     <br>
