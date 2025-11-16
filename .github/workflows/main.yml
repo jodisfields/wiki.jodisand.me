@@ -35,4 +35,4 @@ jobs:
         REMOTE_USER: ${{ secrets.USERNAME }}
         REMOTE_PORT: 22
         SOURCE: "public/"
-        TARGET: "~/wiki.jodisand.me"
+        TARGET: "~/wiki.jodisand.me/public"
