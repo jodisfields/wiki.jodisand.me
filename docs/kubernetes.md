@@ -13,6 +13,9 @@ A comprehensive guide to Kubernetes (K8s) - the industry-standard container orch
 - [Security](#security)
 - [Troubleshooting](#troubleshooting)
 - [Best Practices](#best-practices)
+- [kubectl Plugins](#kubectl-plugins)
+- [k9s - Kubernetes CLI](#k9s---kubernetes-cli)
+- [CNI (Container Network Interface)](#cni-container-network-interface)
 
 ## Core Concepts
 
@@ -877,6 +880,396 @@ spec:
     matchLabels:
       app: myapp
 ```
+
+## kubectl Plugins
+
+### Installing kubectl Plugins
+
+```bash
+# Install krew (kubectl plugin manager)
+(
+  set -x; cd "$(mktemp -d)" &&
+  OS="$(uname | tr '[:upper:]' '[:lower:]')" &&
+  ARCH="$(uname -m | sed -e 's/x86_64/amd64/' -e 's/\(arm\)\(64\)\?.*/\1\2/' -e 's/aarch64$/arm64/')" &&
+  KREW="krew-${OS}_${ARCH}" &&
+  curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/latest/download/${KREW}.tar.gz" &&
+  tar zxvf "${KREW}.tar.gz" &&
+  ./"${KREW}" install krew
+)
+
+# Add to PATH (add to ~/.bashrc or ~/.zshrc)
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+# Update krew
+kubectl krew update
+
+# List available plugins
+kubectl krew search
+
+# Install plugin
+kubectl krew install <plugin-name>
+
+# List installed plugins
+kubectl krew list
+
+# Upgrade plugins
+kubectl krew upgrade
+```
+
+### Popular kubectl Plugins
+
+```bash
+# ctx - Switch between contexts
+kubectl krew install ctx
+kubectl ctx                    # List contexts
+kubectl ctx <context-name>     # Switch context
+
+# ns - Switch between namespaces
+kubectl krew install ns
+kubectl ns                     # List namespaces
+kubectl ns <namespace>         # Switch namespace
+
+# tree - Show hierarchy of resources
+kubectl krew install tree
+kubectl tree deployment myapp
+
+# neat - Clean up YAML output
+kubectl krew install neat
+kubectl get pod mypod -o yaml | kubectl neat
+
+# stern - Multi-pod log tailing
+kubectl krew install stern
+kubectl stern myapp            # Tail logs from all pods matching 'myapp'
+kubectl stern --namespace=prod myapp
+
+# access-matrix - Show RBAC permissions
+kubectl krew install access-matrix
+kubectl access-matrix
+
+# node-shell - Shell into nodes
+kubectl krew install node-shell
+kubectl node-shell <node-name>
+
+# view-secret - Decode secrets
+kubectl krew install view-secret
+kubectl view-secret <secret-name>
+
+# images - Show images used in cluster
+kubectl krew install images
+kubectl images
+
+# whoami - Show current user info
+kubectl krew install whoami
+kubectl whoami
+```
+
+## k9s - Kubernetes CLI
+
+### Installation
+
+```bash
+# macOS
+brew install k9s
+
+# Linux (binary)
+wget https://github.com/derailed/k9s/releases/latest/download/k9s_Linux_amd64.tar.gz
+tar -xzf k9s_Linux_amd64.tar.gz
+sudo mv k9s /usr/local/bin/
+
+# Using Go
+go install github.com/derailed/k9s@latest
+
+# Verify installation
+k9s version
+```
+
+### Basic Usage
+
+```bash
+# Start k9s
+k9s
+
+# Start in specific namespace
+k9s -n <namespace>
+
+# Start with specific context
+k9s --context <context-name>
+
+# Read-only mode
+k9s --readonly
+
+# Start at specific resource
+k9s -c pods
+k9s -c deployments
+```
+
+### k9s Navigation
+
+```bash
+# General Navigation
+:pods         # View pods
+:svc          # View services
+:deploy       # View deployments
+:ns           # View namespaces
+:no           # View nodes
+:ctx          # Switch context
+:quit         # Exit k9s
+
+# Key Bindings
+<enter>       # View resource details
+<d>           # Describe resource
+<l>           # View logs
+<e>           # Edit resource
+<y>           # View YAML
+<shift-f>     # Port forward
+<s>           # Shell into container
+<ctrl-d>      # Delete resource
+<ctrl-k>      # Kill pod
+</>           # Filter
+<esc>         # Back/Clear
+<?> or <h>    # Help
+
+# Pod Operations
+<l>           # View logs
+<p>           # Previous logs
+<f>           # Follow logs
+<s>           # Shell into container
+<shift-f>     # Port forward
+<ctrl-k>      # Kill pod
+
+# Filtering
+/nginx        # Filter resources containing 'nginx'
+/-l app=web   # Filter by label
+/!Running     # Inverse filter (not Running)
+```
+
+### k9s Configuration
+
+```yaml
+# ~/.config/k9s/config.yml
+k9s:
+  # Refresh rate (ms)
+  refreshRate: 2000
+
+  # Max log lines
+  maxConnRetry: 5
+
+  # Enable mouse support
+  enableMouse: true
+
+  # Default namespace
+  namespace:
+    active: default
+    favorites:
+      - default
+      - kube-system
+      - production
+
+  # View settings
+  view:
+    active: pods
+
+  # Log settings
+  logger:
+    tail: 100
+    buffer: 5000
+
+  # Theme
+  thresholds:
+    cpu:
+      critical: 90
+      warn: 70
+    memory:
+      critical: 90
+      warn: 70
+```
+
+### k9s Skins/Themes
+
+```yaml
+# ~/.config/k9s/skin.yml
+k9s:
+  # Dracula theme example
+  body:
+    fgColor: "#f8f8f2"
+    bgColor: "#282a36"
+    logoColor: "#ff79c6"
+
+  prompt:
+    fgColor: "#f8f8f2"
+    bgColor: "#282a36"
+    suggestColor: "#6272a4"
+
+  info:
+    fgColor: "#8be9fd"
+    sectionColor: "#f8f8f2"
+
+  help:
+    fgColor: "#f8f8f2"
+    bgColor: "#282a36"
+    keyColor: "#50fa7b"
+
+  # Or use built-in skins
+  # Options: default, dracula, monokai, nord, solarized-dark, etc.
+```
+
+### k9s Plugins
+
+```yaml
+# ~/.config/k9s/plugin.yml
+plugins:
+  # Dive into image layers
+  dive:
+    shortCut: Shift-D
+    description: Dive image
+    scopes:
+      - containers
+    command: dive
+    background: false
+    args:
+      - $COL-IMAGE
+
+  # Debug with ephemeral container
+  debug:
+    shortCut: Shift-E
+    description: Add debug container
+    scopes:
+      - pods
+    command: kubectl
+    background: false
+    args:
+      - debug
+      - -it
+      - -n
+      - $NAMESPACE
+      - $NAME
+      - --image=nicolaka/netshoot
+      - --target=$NAME
+```
+
+## CNI (Container Network Interface)
+
+### Overview
+
+CNI plugins handle networking for Kubernetes pods:
+
+- **Flannel**: Simple overlay network
+- **Calico**: Network policy and BGP routing
+- **Cilium**: eBPF-based networking and security
+- **Weave**: Simple, resilient network
+- **Canal**: Flannel + Calico policies
+
+### Cilium CNI Integration
+
+```bash
+# Install Cilium CLI
+CILIUM_CLI_VERSION=$(curl -s https://raw.githubusercontent.com/cilium/cilium-cli/main/stable.txt)
+curl -L --fail --remote-name-all https://github.com/cilium/cilium-cli/releases/download/${CILIUM_CLI_VERSION}/cilium-linux-amd64.tar.gz
+sudo tar xzvfC cilium-linux-amd64.tar.gz /usr/local/bin
+rm cilium-linux-amd64.tar.gz
+
+# Install Cilium on Kubernetes
+cilium install --version 1.14.5
+
+# Check status
+cilium status
+cilium status --wait
+
+# Enable Hubble (observability)
+cilium hubble enable --ui
+
+# Verify installation
+cilium connectivity test
+
+# View Cilium pods
+kubectl -n kube-system get pods -l k8s-app=cilium
+```
+
+### Cilium Features
+
+```bash
+# Network Policies
+# Cilium supports both Kubernetes NetworkPolicies
+# and CiliumNetworkPolicies with advanced features
+
+# Enable IP transparency
+cilium config set enable-ipv4=true
+cilium config set enable-ipv6=false
+
+# Enable bandwidth manager
+cilium config set enable-bandwidth-manager=true
+
+# Enable host firewall
+cilium config set enable-host-firewall=true
+
+# View Cilium endpoints
+kubectl -n kube-system exec -ti ds/cilium -- cilium endpoint list
+
+# View identity
+kubectl -n kube-system exec -ti ds/cilium -- cilium identity list
+
+# Monitor traffic
+kubectl -n kube-system exec -ti ds/cilium -- cilium monitor
+
+# Check policy enforcement
+kubectl -n kube-system exec -ti ds/cilium -- cilium policy get
+```
+
+### Hubble Observability
+
+```bash
+# Install Hubble CLI
+export HUBBLE_VERSION=$(curl -s https://raw.githubusercontent.com/cilium/hubble/master/stable.txt)
+curl -L --fail --remote-name-all https://github.com/cilium/hubble/releases/download/$HUBBLE_VERSION/hubble-linux-amd64.tar.gz
+sudo tar xzvfC hubble-linux-amd64.tar.gz /usr/local/bin
+
+# Port-forward Hubble
+cilium hubble port-forward &
+
+# Observe flows
+hubble observe
+hubble observe --namespace default
+hubble observe --pod myapp
+
+# Filter by verdict
+hubble observe --verdict DROPPED
+hubble observe --verdict FORWARDED
+
+# Service dependencies
+hubble observe --protocol http
+
+# Access Hubble UI
+kubectl port-forward -n kube-system svc/hubble-ui 12000:80
+# Open browser to http://localhost:12000
+```
+
+### Example Cilium Network Policy
+
+```yaml
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: allow-frontend-to-backend
+  namespace: default
+spec:
+  endpointSelector:
+    matchLabels:
+      app: backend
+  ingress:
+    - fromEndpoints:
+        - matchLabels:
+            app: frontend
+      toPorts:
+        - ports:
+            - port: "8080"
+              protocol: TCP
+          rules:
+            http:
+              - method: "GET"
+                path: "/api/.*"
+```
+
+For more detailed Cilium documentation, see [Cilium CNI](cilium.md).
 
 ## Quick Reference
 

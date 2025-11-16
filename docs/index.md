@@ -16,8 +16,10 @@ A comprehensive collection of cheatsheets, documentation, and code snippets for 
 - **[Docker](docker.md)** - Container fundamentals and best practices
 - **[Docker Compose](docker-compose.md)** - Multi-container application orchestration
 - **[Kubernetes](kubernetes.md)** - Container orchestration and cluster management
+- **[Cilium](cilium.md)** - eBPF-based networking and security for Kubernetes
 - **[Ansible](ansible.md)** - Configuration management and automation
 - **[Terraform](terraform.md)** - Infrastructure as Code (IaC)
+- **[Traefik](traefik.md)** - Cloud-native edge router and ingress controller
 
 ### Cloud Platforms
 
@@ -29,19 +31,24 @@ A comprehensive collection of cheatsheets, documentation, and code snippets for 
 - **[PostgreSQL](postgresql.md)** - Relational database management
 - **[Redis](redis.md)** - In-memory data structure store
 
-### Networking
+### Networking & Proxies
 
 - **[Cisco Cheatsheet](cisco-cheatsheet.md)** - Cisco IOS commands and configuration
 - **[iproute2](iproute2.md)** - Linux networking command-line tools
 - **[Network Automation](network_automation.md)** - Network automation tools and techniques
+- **[Squid Proxy](squid-proxy.md)** - Caching and forwarding HTTP proxy server
+- **[SSH](ssh.md)** - Secure Shell protocol and usage
 - **[SCP](scp.md)** - Secure file transfer
 
 ### Version Control
 
 - **[Git](git.md)** - Version control workflows and commands
 
-### Security
+### Security & Identity
 
+- **[TLS/SSL Certificates](tls-ssl.md)** - Certificate management and PKI
+- **[HashiCorp Vault](vault.md)** - Secrets management and data protection
+- **[Red Hat IDM](redhat-idm.md)** - Identity Management and authentication
 - **[Red Team Tools](red-team-tools.md)** - Security testing and penetration testing tools
 
 ### Software Engineering
