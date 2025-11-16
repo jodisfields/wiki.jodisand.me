@@ -2,43 +2,9 @@
 
 # Software Engineering Wiki
 
-<p class="subtitle">A comprehensive knowledge base for modern software engineering, DevOps, and cloud technologies</p>
+<p class="subtitle">Fast, offline-ready documentation for software engineering, DevOps, and cloud technologies</p>
 
 </div>
-
-<div class="stats-container" markdown>
-
-<div class="stat-card blue" markdown>
-<p class="stat-number">30</p>
-<p class="stat-label">Topic Pages</p>
-</div>
-
-<div class="stat-card green" markdown>
-<p class="stat-number">912+</p>
-<p class="stat-label">Code Snippets</p>
-</div>
-
-<div class="stat-card orange" markdown>
-<p class="stat-number">8</p>
-<p class="stat-label">Categories</p>
-</div>
-
-<div class="stat-card purple" markdown>
-<p class="stat-number">Live</p>
-<p class="stat-label">Always Updated</p>
-</div>
-
-</div>
-
-## Quick Access
-
-<div class="quick-links" markdown>
-[Search Documentation](#){ .quick-link-btn }
-[Browse Snippets](Snippets/){ .quick-link-btn }
-[View on GitHub](https://github.com/jodisfields/wiki.jodisand.me){ .quick-link-btn }
-</div>
-
----
 
 ## Topics Index
 
@@ -53,8 +19,39 @@ Master programming languages with practical examples and best practices.
 <ul class="topic-links">
 <li><a href="bash/">Bash</a> - Shell scripting & automation</li>
 <li><a href="go/">Go</a> - Modern systems programming</li>
+<li><a href="python/">Python</a> - General-purpose programming</li>
 <li><a href="rust/">Rust</a> - Safe systems programming</li>
 <li><a href="typescript/">TypeScript</a> - Type-safe JavaScript</li>
+</ul>
+
+</div>
+
+<div class="topic-card" markdown>
+
+### Frontend
+
+Modern frontend frameworks and styling solutions for building user interfaces.
+
+<ul class="topic-links">
+<li><a href="react/">React</a> - Component-based UI library</li>
+<li><a href="vue/">Vue.js</a> - Progressive framework</li>
+<li><a href="nextjs/">Next.js</a> - React framework with SSR</li>
+<li><a href="tailwindcss/">Tailwind CSS</a> - Utility-first CSS</li>
+</ul>
+
+</div>
+
+<div class="topic-card" markdown>
+
+### Backend
+
+Server-side frameworks and APIs for building scalable applications.
+
+<ul class="topic-links">
+<li><a href="nodejs/">Node.js</a> - JavaScript runtime</li>
+<li><a href="express/">Express</a> - Minimal web framework</li>
+<li><a href="django/">Django</a> - Python web framework</li>
+<li><a href="fastapi/">FastAPI</a> - Modern Python API framework</li>
 </ul>
 
 </div>
@@ -96,6 +93,7 @@ Data storage, querying, and performance optimization.
 <ul class="topic-links">
 <li><a href="postgresql/">PostgreSQL</a> - Relational database</li>
 <li><a href="redis/">Redis</a> - In-memory data store</li>
+<li><a href="mongodb/">MongoDB</a> - NoSQL document database</li>
 <li><a href="elasticsearch/">Elasticsearch</a> - Search & analytics</li>
 </ul>
 
@@ -148,13 +146,25 @@ Security tools, identity management, and cryptography.
 
 <div class="topic-card" markdown>
 
+### Testing
+
+Testing frameworks and strategies for ensuring code quality.
+
+<ul class="topic-links">
+<li><a href="jest/">Jest</a> - JavaScript testing framework</li>
+<li><a href="testing/">Testing Guide</a> - Testing strategies & best practices</li>
+</ul>
+
+</div>
+
+<div class="topic-card" markdown>
+
 ### Engineering
 
-Software architecture, testing, and development practices.
+Software architecture and development best practices.
 
 <ul class="topic-links">
 <li><a href="design/">Design</a> - Architecture patterns</li>
-<li><a href="testing/">Testing</a> - Testing strategies</li>
 <li><a href="git/">Git</a> - Version control</li>
 <li><a href="chatGPT/">ChatGPT</a> - AI-assisted development</li>
 </ul>
@@ -163,26 +173,6 @@ Software architecture, testing, and development practices.
 
 </div>
 
----
 
-## Code Snippets Library
-
-Browse organized collections of reusable code snippets across multiple languages:
-
-| Language | Snippets | Description |
-|----------|----------|-------------|
-| **[JavaScript](Snippets/Javascript/)** | 536+ | Modern JS/TS utilities & patterns |
-| **[Python](Snippets/Python/)** | 159+ | Python scripts & algorithms |
-| **[C#](Snippets/C%23/)** | 80+ | C# utilities & algorithms |
-| **[Go](Snippets/Go/)** | 60+ | Go programming utilities |
-| **[React](Snippets/React/)** | 77+ | React components & hooks |
-
----
-
-## About
-
-This wiki is built with [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) and serves as a living knowledge base, continuously updated with practical examples, best practices, and real-world solutions for software engineering challenges.
-
-**Built by:** [Jodis Fields](https://github.com/jodisfields)
-**Source:** [GitHub Repository](https://github.com/jodisfields/wiki.jodisand.me)
+</div>
 
