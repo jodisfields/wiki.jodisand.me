@@ -91,8 +91,19 @@ nav:
   - Languages:
     - Bash: bash.md
     - Go: go.md
+    - Python: python.md
     - Rust: rust.md
     - TypeScript: typescript.md
+  - Frontend:
+    - React: react.md
+    - Vue.js: vue.md
+    - Next.js: nextjs.md
+    - Tailwind CSS: tailwindcss.md
+  - Backend:
+    - Node.js: nodejs.md
+    - Express: express.md
+    - Django: django.md
+    - FastAPI: fastapi.md
   - DevOps & IaC:
     - Docker: docker.md
     - Docker Compose: docker-compose.md
@@ -104,6 +115,7 @@ nav:
   - Databases:
     - PostgreSQL: postgresql.md
     - Redis: redis.md
+    - MongoDB: mongodb.md
     - Elasticsearch: elasticsearch.md
   - Networking:
     - Cisco: cisco.md
@@ -120,8 +132,10 @@ nav:
     - Vault: vault.md
     - IDM: idm.md
     - Red Team: redteam.md
+  - Testing:
+    - Jest: jest.md
+    - Testing Guide: testing.md
   - Engineering:
     - Design: design.md
-    - Testing: testing.md
     - Git: git.md
     - ChatGPT: chatGPT.md

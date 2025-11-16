@@ -19,8 +19,39 @@ Master programming languages with practical examples and best practices.
 <ul class="topic-links">
 <li><a href="bash/">Bash</a> - Shell scripting & automation</li>
 <li><a href="go/">Go</a> - Modern systems programming</li>
+<li><a href="python/">Python</a> - General-purpose programming</li>
 <li><a href="rust/">Rust</a> - Safe systems programming</li>
 <li><a href="typescript/">TypeScript</a> - Type-safe JavaScript</li>
+</ul>
+
+</div>
+
+<div class="topic-card" markdown>
+
+### Frontend
+
+Modern frontend frameworks and styling solutions for building user interfaces.
+
+<ul class="topic-links">
+<li><a href="react/">React</a> - Component-based UI library</li>
+<li><a href="vue/">Vue.js</a> - Progressive framework</li>
+<li><a href="nextjs/">Next.js</a> - React framework with SSR</li>
+<li><a href="tailwindcss/">Tailwind CSS</a> - Utility-first CSS</li>
+</ul>
+
+</div>
+
+<div class="topic-card" markdown>
+
+### Backend
+
+Server-side frameworks and APIs for building scalable applications.
+
+<ul class="topic-links">
+<li><a href="nodejs/">Node.js</a> - JavaScript runtime</li>
+<li><a href="express/">Express</a> - Minimal web framework</li>
+<li><a href="django/">Django</a> - Python web framework</li>
+<li><a href="fastapi/">FastAPI</a> - Modern Python API framework</li>
 </ul>
 
 </div>
@@ -62,6 +93,7 @@ Data storage, querying, and performance optimization.
 <ul class="topic-links">
 <li><a href="postgresql/">PostgreSQL</a> - Relational database</li>
 <li><a href="redis/">Redis</a> - In-memory data store</li>
+<li><a href="mongodb/">MongoDB</a> - NoSQL document database</li>
 <li><a href="elasticsearch/">Elasticsearch</a> - Search & analytics</li>
 </ul>
 
@@ -114,13 +146,25 @@ Security tools, identity management, and cryptography.
 
 <div class="topic-card" markdown>
 
+### Testing
+
+Testing frameworks and strategies for ensuring code quality.
+
+<ul class="topic-links">
+<li><a href="jest/">Jest</a> - JavaScript testing framework</li>
+<li><a href="testing/">Testing Guide</a> - Testing strategies & best practices</li>
+</ul>
+
+</div>
+
+<div class="topic-card" markdown>
+
 ### Engineering
 
-Software architecture, testing, and development practices.
+Software architecture and development best practices.
 
 <ul class="topic-links">
 <li><a href="design/">Design</a> - Architecture patterns</li>
-<li><a href="testing/">Testing</a> - Testing strategies</li>
 <li><a href="git/">Git</a> - Version control</li>
 <li><a href="chatGPT/">ChatGPT</a> - AI-assisted development</li>
 </ul>
