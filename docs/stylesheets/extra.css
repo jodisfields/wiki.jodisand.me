@@ -1,0 +1,244 @@
+/* DevDocs-style minimal CSS */
+
+/* Root Variables */
+:root {
+    --devdocs-border: rgba(0, 0, 0, 0.1);
+    --devdocs-hover: rgba(63, 81, 181, 0.04);
+    --devdocs-accent: #3f51b5;
+}
+
+[data-md-color-scheme="slate"] {
+    --devdocs-border: rgba(255, 255, 255, 0.1);
+    --devdocs-hover: rgba(63, 81, 181, 0.08);
+}
+
+/* Stats Dashboard - Minimal Style */
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+    padding: 0;
+}
+
+.stat-card {
+    background: var(--md-default-bg-color);
+    border: 1px solid var(--devdocs-border);
+    border-radius: 4px;
+    padding: 1.25rem;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.stat-card:hover {
+    border-color: var(--devdocs-accent);
+    background: var(--devdocs-hover);
+}
+
+.stat-card.blue,
+.stat-card.green,
+.stat-card.orange,
+.stat-card.purple {
+    background: var(--md-default-bg-color);
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.2;
+    color: var(--devdocs-accent);
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    color: var(--md-default-fg-color--light);
+    font-weight: 400;
+}
+
+/* Topic Cards Grid - Minimal Style */
+.topic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.topic-card {
+    background: var(--md-default-bg-color);
+    border: 1px solid var(--devdocs-border);
+    border-radius: 4px;
+    padding: 1.25rem;
+    transition: all 0.2s ease;
+}
+
+.topic-card:hover {
+    border-color: var(--devdocs-accent);
+    background: var(--devdocs-hover);
+}
+
+.topic-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--md-default-fg-color);
+}
+
+.topic-card p {
+    margin: 0 0 1rem 0;
+    font-size: 0.875rem;
+    color: var(--md-default-fg-color--light);
+    line-height: 1.5;
+}
+
+.topic-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.topic-links li {
+    margin: 0.35rem 0;
+}
+
+.topic-links a {
+    text-decoration: none;
+    color: var(--devdocs-accent);
+    font-size: 0.875rem;
+    transition: color 0.2s ease;
+    display: inline-block;
+}
+
+.topic-links a:hover {
+    color: var(--md-primary-fg-color);
+}
+
+/* Hero Section - Minimal Style */
+.hero-section {
+    text-align: center;
+    padding: 3rem 0 2rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--devdocs-border);
+}
+
+.hero-section h1 {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    color: var(--md-default-fg-color);
+}
+
+.hero-section .subtitle {
+    font-size: 1rem;
+    color: var(--md-default-fg-color--light);
+    margin-bottom: 0;
+    font-weight: 400;
+}
+
+/* Category Section Headers */
+.category-header {
+    display: flex;
+    align-items: center;
+    margin: 2.5rem 0 1.5rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--devdocs-border);
+}
+
+.category-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.category-count {
+    margin-left: auto;
+    background: var(--devdocs-hover);
+    color: var(--devdocs-accent);
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 1px solid var(--devdocs-border);
+}
+
+/* Quick Links Section - Minimal Buttons */
+.quick-links {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1.5rem 0;
+}
+
+.quick-link-btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--md-default-bg-color);
+    color: var(--devdocs-accent) !important;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+    border: 1px solid var(--devdocs-border);
+}
+
+.quick-link-btn:hover {
+    border-color: var(--devdocs-accent);
+    background: var(--devdocs-hover);
+}
+
+/* Content Tables - DevDocs Style */
+.md-typeset table:not([class]) {
+    border: 1px solid var(--devdocs-border);
+    border-radius: 4px;
+    font-size: 0.875rem;
+}
+
+.md-typeset table:not([class]) th {
+    background: var(--devdocs-hover);
+    font-weight: 600;
+    border-bottom: 1px solid var(--devdocs-border);
+}
+
+.md-typeset table:not([class]) td {
+    border-top: 1px solid var(--devdocs-border);
+}
+
+/* Code Blocks - Cleaner Style */
+.md-typeset code {
+    border-radius: 3px;
+    font-size: 0.875em;
+}
+
+/* Search Box Enhancement */
+.md-search__input {
+    border-radius: 4px;
+}
+
+/* Sidebar Navigation Enhancement */
+.md-nav__item .md-nav__link--active {
+    color: var(--devdocs-accent);
+    font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .topic-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-section h1 {
+        font-size: 1.75rem;
+    }
+
+    .hero-section {
+        padding: 2rem 0 1.5rem 0;
+    }
+}

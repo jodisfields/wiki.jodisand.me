@@ -1,4 +1,6 @@
 name: deploy
+permissions:
+  contents: read
 on:
   push:
     branches: [ main ]
@@ -8,17 +10,31 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code to workspace
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
+
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+
+    - name: Install uv
+      uses: astral-sh/setup-uv@v5
+      with:
+        enable-cache: true
+
+    - name: Install dependencies
+      run: uv pip install --system -r requirements.txt
 
     - name: Build MkDocs Site
-      uses: moonpathbg/mkdocs_builder@latest
+      run: |
+        mkdocs build -d public
 
     - name: Deploy to web server
-      uses: moonpathbg/scp_uploader@latest
+      uses: easingthemes/ssh-deploy@main
       with:
-          host:  wiki.jodisand.me
-          port: 22
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSH_KEY }}
-          source: "./public"
-          target: "~/wiki.jodisand.me"
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }}
+        REMOTE_HOST: wiki.jodisand.me
+        REMOTE_USER: ${{ secrets.USERNAME }}
+        REMOTE_PORT: 22
+        SOURCE: "public/"
+        TARGET: "~/wiki.jodisand.me/public"

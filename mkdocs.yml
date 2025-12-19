@@ -18,18 +18,32 @@ theme:
     - search.highlight
     - search.share
     - navigation.instant
+    - navigation.instant.prefetch
     - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
     - navigation.top
+    - toc.follow
+    - toc.integrate
+    - content.code.copy
+    - content.code.annotate
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
+      primary: indigo
+      accent: indigo
       toggle:
-        icon: material/toggle-switch-off-outline
+        icon: material/brightness-7
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
+      primary: indigo
+      accent: indigo
       toggle:
-        icon: material/toggle-switch
+        icon: material/brightness-4
         name: Switch to light mode
 # extra configuration
 extra:
@@ -53,7 +67,6 @@ extra:
 plugins:
   - search:
       lang: en
-      indexing: "full"
 # markdown configuration
 markdown_extensions:
   - pymdownx.highlight:
@@ -69,3 +82,60 @@ markdown_extensions:
   - pymdownx.keys
   - pymdownx.mark
   - pymdownx.tilde
+# custom css
+extra_css:
+  - stylesheets/extra.css
+# navigation structure
+nav:
+  - Home: index.md
+  - Languages:
+    - Bash: bash.md
+    - Go: go.md
+    - Python: python.md
+    - Rust: rust.md
+    - TypeScript: typescript.md
+  - Frontend:
+    - React: react.md
+    - Vue.js: vue.md
+    - Next.js: nextjs.md
+    - Tailwind CSS: tailwindcss.md
+  - Backend:
+    - Node.js: nodejs.md
+    - Express: express.md
+    - Django: django.md
+    - FastAPI: fastapi.md
+  - DevOps & IaC:
+    - Docker: docker.md
+    - Docker Compose: docker-compose.md
+    - Kubernetes: kubernetes.md
+    - Ansible: ansible.md
+    - Terraform: terraform.md
+  - Cloud:
+    - AWS: aws.md
+  - Databases:
+    - PostgreSQL: postgresql.md
+    - Redis: redis.md
+    - MongoDB: mongodb.md
+    - Elasticsearch: elasticsearch.md
+  - Networking:
+    - Cisco: cisco.md
+    - iproute2: iproute2.md
+    - NetAuto: netauto.md
+    - SSH: ssh.md
+    - SCP: scp.md
+  - Proxies & Routing:
+    - Traefik: traefik.md
+    - Squid: squid.md
+    - Cilium: cilium.md
+  - Security & IAM:
+    - TLS: tls.md
+    - Vault: vault.md
+    - IDM: idm.md
+    - Red Team: redteam.md
+  - Testing:
+    - Jest: jest.md
+    - Testing Guide: testing.md
+  - Engineering:
+    - Design: design.md
+    - Git: git.md
+    - ChatGPT: chatGPT.md
